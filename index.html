@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centered Video with Background Image</title>
     <style>
-        body, html {
+        /* Define the custom font */
+        @font-face {
+            font-family: 'Junegull';  /* Give the font a name */
+            src: url('junegull.ttf') format('truetype'); /* Path to your font file */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden; /* Hide scrollbars */
-            display: flex; /* Use flexbox for centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
 
             /* Add background image */
             background-image: url("https://github.com/Heronwaterwow/gvhhjkhk/blob/main/IMG_6427.PNG?raw=true");
@@ -20,17 +29,59 @@
             background-position: center; /* Center the image */
         }
 
-        .centered-video {
-            max-width: 80%; /* Limit video width (adjust as needed) */
-            max-height: 80%; /* Limit video height (adjust as needed) */
-            object-fit: contain; /* Preserve aspect ratio */
+        .logo-top {
+            max-width: 200px;
+            margin-bottom: 20px;
         }
+
+        .centered-video {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .buy-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin-top: 40px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-family: 'Junegull', sans-serif;
+        }
+
+        .logo-bottom {
+            max-width: 200px;
+            margin-top: auto; /* Push to the bottom */
+            margin-bottom: 10px; /* Add a little space from the very bottom edge */
+        }
+
+        .telegram-logo {
+            position: absolute; /* Take it out of the normal flow */
+            top: 10px; /* Distance from the top */
+            left: 10px; /* Distance from the left */
+            width: 50px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+            cursor: pointer; /* Changes cursor to a pointer */
+        }
+
     </style>
 </head>
 <body>
+
+    <a href="https://t.me/fpibank" target="_blank">
+        <img src="https://static.insales-cdn.com/files/1/526/34144782/original/телега_1711971983493-1711971987606.png" alt="Telegram Logo" class="telegram-logo">
+    </a>
+    <img src="big_logo2.svg" alt="Logo" class="logo-top">
     <video src="https://fpibank.com/assets/img/output.webm" autoplay loop muted class="centered-video"></video>
+    <button class="buy-button">"TON" на "FPI BANK"</button>
+    <img src="big_logo2.svg" alt="Logo" class="logo-bottom">
 </body>
 </html>
-
 
 
