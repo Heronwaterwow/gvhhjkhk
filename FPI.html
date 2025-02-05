@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Image (Adaptive Scaling)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgb(31, 24, 36); /* Set background color */
+        }
+
+        .fullscreen-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullscreen-image {
+            /* Remove max-width and max-height restrictions */
+            width: 100%;       /* Initial width to fill the container */
+            height: auto;      /* Maintain aspect ratio */
+            object-fit: contain;  /* Crucial for aspect ratio and fitting */
+
+            /* Ensure the image *scales up* on larger screens: */
+            min-width: 50%;  /* Ensure image isn't too small on small screens */
+            min-height: 50%;  /* Ensure image isn't too small on small screens */
+
+            /* Optionally: Add transitions for smooth scaling */
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="fullscreen-image-container">
+        <img src="фпи2.png" alt="FPI Bank" class="fullscreen-image">
+    </div>
+</body>
+</html>
+
